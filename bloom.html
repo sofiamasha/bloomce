@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Finance — Inteligência Financeira Pessoal</title>
+  <meta name="description" content="Bloom Finance transforma sua planilha financeira em uma experiência inteligente, intuitiva e agradável de usar. Com IA integrada e entrada por voz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bloom.css" />
+</head>
+<body>
+  <!-- Canvas particles background -->
+  <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- HOME PAGE                                          -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div id="homePage" class="home-page">
+
+    <!-- Top Nav -->
+    <nav class="home-nav" aria-label="Navegação principal">
+      <div class="home-brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3C14 3 5 8 5 15C5 20.5 9 25 14 25C19 25 23 20.5 23 15C23 8 14 3 14 3Z" fill="url(#bloomGrad)"/>
+            <path d="M14 10C14 10 10 12.5 10 16C10 18.8 11.8 21 14 21C16.2 21 18 18.8 18 16C18 12.5 14 10 14 10Z" fill="white" fill-opacity="0.9"/>
+            <defs>
+              <linearGradient id="bloomGrad" x1="5" y1="3" x2="23" y2="25" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C6AFF"/>
+                <stop offset="1" stop-color="#B06EFF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="brand-name">Bloom Finance</span>
+      </div>
+      <div class="home-nav-links">
+        <a href="#why" class="nav-link">Por que Bloom?</a>
+        <a href="#features" class="nav-link">Funcionalidades</a>
+        <button class="btn-nav-cta" id="btnEnterFromNav">Entrar no Workspace →</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+
+      <!-- Glow orbs background -->
+      <div class="hero-glow glow-1" aria-hidden="true"></div>
+      <div class="hero-glow glow-2" aria-hidden="true"></div>
+
+      <!-- Floating 3D Illustration -->
+      <div class="hero-3d" aria-hidden="true" id="hero3D">
+        <div class="float-card float-card-1">
+          <div class="fc-icon">📊</div>
+          <div class="fc-text">
+            <div class="fc-label">Almoço</div>
+            <div class="fc-val">R$ 416,39</div>
+          </div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="fc-icon">🤖</div>
+          <div class="fc-text">
+            <div class="fc-label">IA Detectou</div>
+            <div class="fc-val">+R$ 22,50</div>
+          </div>
+          <div class="fc-badge">Novo</div>
+        </div>
+        <div class="float-card float-card-3">
+          <div class="fc-icon">📈</div>
+          <div class="fc-text">
+            <div class="fc-label">Maior Gasto</div>
+            <div class="fc-val">Almoço</div>
+          </div>
+        </div>
+        <div class="central-orb">
+          <div class="orb-inner">
+            <svg width="40" height="40" viewBox="0 0 28 28" fill="none">
+              <path d="M14 3C14 3 5 8 5 15C5 20.5 9 25 14 25C19 25 23 20.5 23 15C23 8 14 3 14 3Z" fill="url(#bloomGrad2)"/>
+              <path d="M14 10C14 10 10 12.5 10 16C10 18.8 11.8 21 14 21C16.2 21 18 18.8 18 16C18 12.5 14 10 14 10Z" fill="white" fill-opacity="0.9"/>
+              <defs>
+                <linearGradient id="bloomGrad2" x1="5" y1="3" x2="23" y2="25" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#A78BFA"/>
+                  <stop offset="1" stop-color="#C084FC"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Copy -->
+      <div class="hero-copy" id="heroCopy">
+        <div class="hero-badge" role="note">✦ IA Integrada com Voz</div>
+        <h1 id="heroTitle" class="hero-title">
+          Entenda seus<br/>
+          <span class="hero-gradient">gastos em segundos.</span>
+        </h1>
+        <p class="hero-sub">
+          Bloom Finance transforma registros financeiros em inteligência real.<br/>
+          Fale, escreva ou clique — a planilha se atualiza instantaneamente.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-enter" id="btnEnterMain">
+            <span>Entrar no Workspace</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-ghost" id="btnDemoHome">Ver demonstração</button>
+        </div>
+        <div class="hero-social-proof">
+          <div class="proof-item"><span class="proof-icon">⚡</span> <span>Planilha em tempo real</span></div>
+          <div class="proof-item"><span class="proof-icon">🎙️</span> <span>Entrada por voz</span></div>
+          <div class="proof-item"><span class="proof-icon">🔒</span> <span>100% no seu navegador</span></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Why Bloom Section -->
+    <section class="why-section" id="why" aria-labelledby="whyTitle">
+      <div class="why-inner">
+        <div class="section-label">Por que o Bloom existe?</div>
+        <h2 id="whyTitle" class="why-title">Não é mais um app financeiro.</h2>
+        <p class="why-body">
+          O Bloom Finance nasceu de uma necessidade real. Em vez de criar mais um aplicativo financeiro, o objetivo foi desenvolver uma ferramenta focada em entender <strong>padrões de consumo</strong>, simplificar o registro de despesas com IA e transformar uma planilha tradicional em uma experiência inteligente, intuitiva e agradável de usar.
+        </p>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">🔍</div>
+            <h3>Clareza total</h3>
+            <p>Visualize exatamente onde seu dinheiro vai, por categoria, sem tabelas confusas ou gráficos abstratos.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">🤖</div>
+            <h3>IA que entende você</h3>
+            <p>Fale naturalmente. "Gastei 22 reais com almoço." A IA captura e registra, sem formulários.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">⚡</div>
+            <h3>Velocidade acima de tudo</h3>
+            <p>Nenhuma fricção. Cada interação foi pensada para ser mais rápida e prazerosa do que qualquer alternativa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features preview section -->
+    <section class="features-section" id="features" aria-labelledby="featuresTitle">
+      <div class="features-inner">
+        <div class="section-label">Funcionalidades</div>
+        <h2 id="featuresTitle" class="features-title">Tudo que você precisa.</h2>
+        <div class="features-list">
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true">📋</div>
+            <div class="feature-text">
+              <h3>Planilha Inteligente</h3>
+              <p>Colunas por categoria, totais automáticos, rolagem horizontal fluida. Inspirado em Notion e Airtable, mas pensado exclusivamente para finanças pessoais.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true">🧠</div>
+            <div class="feature-text">
+              <h3>IA na Lateral</h3>
+              <p>Um assistente sempre visível que analisa seus padrões, responde perguntas e registra despesas por texto ou voz com processamento em linguagem natural.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true">💰</div>
+            <div class="feature-text">
+              <h3>Valores a Receber</h3>
+              <p>Controle quem precisa te pagar. Marque como recebido com um clique. Os valores somem da lista automaticamente.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon" aria-hidden="true">📄</div>
+            <div class="feature-text">
+              <h3>Relatórios Instantâneos</h3>
+              <p>Exporte em PDF, CSV ou JSON com um clique. Dados reais, formatados profissionalmente.</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn-enter" id="btnEnterBottom" style="margin-top:40px; display:inline-flex;">
+          <span>Entrar no Workspace</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="home-footer">
+      <div class="brand-name" style="font-size:0.9rem; opacity:0.5;">Bloom Finance</div>
+      <div style="font-size:0.78rem; opacity:0.3; margin-top:4px;">Desenvolvido com foco em experiência do usuário.</div>
+    </footer>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- APP PAGE (Workspace)                               -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div id="appPage" class="app-page" style="display:none;" aria-label="Workspace financeiro">
+
+    <!-- Topbar -->
+    <header class="app-topbar" role="banner">
+      <div class="topbar-left">
+        <button class="brand-back" id="btnBackHome" title="Voltar à home" aria-label="Voltar à home">
+          <div class="brand-mark-sm" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+              <path d="M14 3C14 3 5 8 5 15C5 20.5 9 25 14 25C19 25 23 20.5 23 15C23 8 14 3 14 3Z" fill="url(#bgs)"/>
+              <path d="M14 10C14 10 10 12.5 10 16C10 18.8 11.8 21 14 21C16.2 21 18 18.8 18 16C18 12.5 14 10 14 10Z" fill="white" fill-opacity="0.9"/>
+              <defs><linearGradient id="bgs" x1="5" y1="3" x2="23" y2="25" gradientUnits="userSpaceOnUse"><stop stop-color="#7C6AFF"/><stop offset="1" stop-color="#B06EFF"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="brand-name-sm">Bloom</span>
+        </button>
+
+        <nav class="app-nav" aria-label="Abas da aplicação">
+          <button class="app-tab active" data-page="spreadsheet" id="tab-spreadsheet">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Planilha
+          </button>
+          <button class="app-tab" data-page="receivables" id="tab-receivables">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            A Receber
+          </button>
+          <button class="app-tab" data-page="reports" id="tab-reports">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Relatórios
+          </button>
+          <button class="app-tab" data-page="settings" id="tab-settings">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Ajustes
+          </button>
+        </nav>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-box">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" class="search-field" placeholder="Buscar..." aria-label="Buscar transações" />
+        </div>
+        <div class="balance-pill" id="balancePill" title="Saldo disponível">R$ 171,72</div>
+        <button class="btn-demo-ai" id="btnDemoAI" title="Ver demonstração da IA">✨ Demonstrar IA</button>
+        <button class="topbar-icon-btn" id="btnPresentMode" title="Modo Apresentação">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Body: Spreadsheet + AI Sidebar -->
+    <div class="app-body" id="appBody">
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="app-content" id="appContent">
+
+        <!-- PAGE: SPREADSHEET -->
+        <section class="page active" id="page-spreadsheet">
+          <div class="spreadsheet-header">
+            <div>
+              <h1 class="page-title">Minhas Despesas</h1>
+              <p class="page-sub" id="spreadsheetSub">Carregando…</p>
+            </div>
+            <button class="btn-add-cat" id="btnAddCategory" aria-label="Nova categoria">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Nova Categoria
+            </button>
+          </div>
+
+          <div class="spreadsheet-scroll-area">
+            <div class="spreadsheet-table" id="spreadsheetTable">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE: A RECEBER -->
+        <section class="page" id="page-receivables">
+          <div class="page-header">
+            <h1 class="page-title">Valores a Receber</h1>
+            <p class="page-sub">Controle o que te devem. Marque como recebido para remover.</p>
+          </div>
+          <div class="rec-grid" id="receivablesGrid"></div>
+        </section>
+
+        <!-- PAGE: RELATÓRIOS -->
+        <section class="page" id="page-reports">
+          <div class="page-header">
+            <h1 class="page-title">Relatórios</h1>
+            <p class="page-sub">Exporte seus dados em diferentes formatos.</p>
+          </div>
+          <div class="report-cards">
+            <button class="report-card" id="btnExportPDF">
+              <div class="rc-icon">📄</div>
+              <div class="rc-title">PDF</div>
+              <div class="rc-desc">Relatório formatado pronto para imprimir ou enviar.</div>
+            </button>
+            <button class="report-card" id="btnExportCSV">
+              <div class="rc-icon">📊</div>
+              <div class="rc-title">CSV</div>
+              <div class="rc-desc">Compatível com Excel, Google Sheets e qualquer planilha.</div>
+            </button>
+            <button class="report-card" id="btnExportJSON">
+              <div class="rc-icon">💾</div>
+              <div class="rc-title">Backup JSON</div>
+              <div class="rc-desc">Backup completo com todas as transações e configurações.</div>
+            </button>
+          </div>
+          <div id="pdfReport" style="display:none; padding:40px; width:800px; background:white; color:black; font-family:Inter,sans-serif;">
+            <h1 style="font-size:22px; border-bottom:1px solid #eee; padding-bottom:12px; margin-bottom:20px;">Bloom Finance — Relatório de Gastos</h1>
+            <div id="pdfContent"></div>
+          </div>
+        </section>
+
+        <!-- PAGE: AJUSTES -->
+        <section class="page" id="page-settings">
+          <div class="page-header">
+            <h1 class="page-title">Ajustes</h1>
+          </div>
+          <div class="settings-section-card">
+            <div class="setting-row">
+              <div>
+                <h3 class="set-label">Modo Escuro</h3>
+                <p class="set-desc">Interface em cores escuras.</p>
+              </div>
+              <input type="checkbox" id="themeToggle" class="toggle" />
+            </div>
+            <div class="setting-row" style="margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
+              <div>
+                <h3 class="set-label" style="color:var(--red);">Redefinir Sistema</h3>
+                <p class="set-desc">Apaga todos os dados permanentemente e restaura os dados originais.</p>
+              </div>
+              <button class="btn-danger" id="btnWipeData">Redefinir</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- AI SIDEBAR -->
+      <aside class="ai-sidebar" id="aiSidebar" aria-label="Assistente de IA Bloom">
+        <div class="ai-sidebar-header">
+          <div class="ai-header-title">
+            <div class="ai-status-dot" aria-label="IA online" aria-live="polite"></div>
+            <span>Bloom AI</span>
+          </div>
+          <button class="ai-clear-btn" id="btnClearChat" title="Limpar conversa" aria-label="Limpar conversa">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </button>
+        </div>
+
+        <div class="ai-messages" id="aiMessages">
+          <!-- Initial message rendered by JS -->
+        </div>
+
+        <div class="ai-suggestions" id="aiSuggestions">
+          <button class="suggestion" data-q="Resumo dos meus gastos">📊 Resumo do mês</button>
+          <button class="suggestion" data-q="Qual meu maior gasto?">🔍 Maior gasto</button>
+          <button class="suggestion" data-q="Onde posso economizar?">💡 Dicas de economia</button>
+        </div>
+
+        <div class="ai-input-area">
+          <div class="ai-input-box" id="aiInputBox">
+            <textarea id="aiInput" class="ai-textarea" placeholder="Fale ou escreva… Ex: Gastei 15 com almoço" rows="1" aria-label="Mensagem para a IA"></textarea>
+            <div class="ai-input-actions">
+              <button class="voice-btn" id="voiceBtn" title="Usar microfone" aria-label="Ativar reconhecimento de voz">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+              </button>
+              <button class="send-btn" id="btnAISend" title="Enviar" aria-label="Enviar mensagem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div><!-- /app-body -->
+
+    <!-- Presentation Mode Banner -->
+    <div class="present-banner" id="presentBanner" style="display:none;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+      Modo Apresentação ativo — dados fictícios visíveis
+      <button id="btnExitPresent">Sair</button>
+    </div>
+
+  </div><!-- /appPage -->
+
+  <!-- Hidden PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="bloom.js"></script>
+</body>
+</html>
