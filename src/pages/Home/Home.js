@@ -1,4 +1,5 @@
 import './Home.css';
+import { initParticles } from '../../utils/particles';
 
 export const Home = {
   render() {
@@ -6,6 +7,7 @@ export const Home = {
     div.id = 'homePage';
     div.className = 'home-page';
     div.innerHTML = `
+      <canvas id="particlesCanvas" class="particles-bg" aria-hidden="true"></canvas>
       <nav class="home-nav" aria-label="Navegação principal">
         <div class="home-brand">
           <div class="brand-mark" aria-hidden="true">
@@ -206,9 +208,11 @@ export const Home = {
     };
 
     document.addEventListener('mousemove', this.mouseMoveHandler);
+    this.cleanupParticles = initParticles('particlesCanvas');
   },
 
   destroy() {
+    if (this.cleanupParticles) this.cleanupParticles();
     if (this.mouseMoveHandler) {
       document.removeEventListener('mousemove', this.mouseMoveHandler);
     }
