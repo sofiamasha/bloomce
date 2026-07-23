@@ -1,0 +1,4 @@
+@import './variables.css';
+@import './reset.css';
+
+/* Core application layout logic will be imported by components */

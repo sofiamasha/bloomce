@@ -1,0 +1,14 @@
+.reports-container { padding:32px 40px; max-width:1000px; }
+.rep-header { margin-bottom:32px; }
+.rep-title { font-size:1.6rem; font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:4px; }
+.rep-subtitle { font-size:0.85rem; color:var(--text-3); font-weight:500; }
+
+.export-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px; }
+.export-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:32px; text-align:center; box-shadow:var(--shadow-sm); transition:all 0.3s var(--smooth); }
+.export-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--border-2); }
+.exp-icon { font-size:32px; margin-bottom:16px; }
+.export-card h3 { font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:8px; }
+.export-card p { font-size:0.85rem; color:var(--text-2); line-height:1.5; margin-bottom:24px; }
+
+.btn-exp { width:100%; padding:12px; font-size:0.85rem; font-weight:600; background:var(--surface-2); color:var(--text); border-radius:var(--r-sm); transition:all 0.2s; }
+.btn-exp:hover { background:var(--text); color:var(--bg); }

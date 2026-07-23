@@ -1,0 +1,20 @@
+.receivables-container { padding:32px 40px; }
+.rec-header { margin-bottom:32px; }
+.rec-title { font-size:1.6rem; font-weight:800; letter-spacing:-0.03em; color:var(--text); margin-bottom:4px; }
+.rec-subtitle { font-size:0.85rem; color:var(--text-3); font-weight:500; }
+
+.rec-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px; }
+.rec-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:20px; box-shadow:var(--shadow-xs); }
+.rec-card-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--border-2); }
+.rec-name { font-size:0.95rem; font-weight:700; color:var(--text); }
+.rec-total { font-size:0.95rem; font-weight:800; color:var(--accent); }
+
+.rec-list { display:flex; flex-direction:column; gap:12px; }
+.rec-item { display:flex; align-items:center; justify-content:space-between; padding:10px; background:var(--surface-2); border-radius:var(--r-sm); transition:background 0.2s; }
+.rec-item:hover { background:var(--surface-3); }
+.rec-item-info { display:flex; flex-direction:column; gap:4px; }
+.rec-item-desc { font-size:0.8rem; font-weight:600; color:var(--text); }
+.rec-item-val { font-size:0.75rem; color:var(--text-2); font-variant-numeric:tabular-nums; }
+
+.btn-paid { font-size:0.7rem; font-weight:600; padding:4px 10px; border-radius:99px; background:var(--surface); border:1px solid var(--border); color:var(--text-2); transition:all 0.2s; }
+.btn-paid:hover { background:var(--green); color:white; border-color:var(--green); }
